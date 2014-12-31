@@ -13,7 +13,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 class DefaultController extends Controller
 {       
     /**
-     * @Route("/add/{name}/{cities}", name="_info_fake")
+     * @Route("/add/{name}/{cities}", name="_add_province")
      * @Template()
      */
     public function addProvinceAction($name,$cities)
