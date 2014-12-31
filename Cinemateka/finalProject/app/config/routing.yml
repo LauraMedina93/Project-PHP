@@ -9,6 +9,6 @@ get:
 cine:
     resource: "@cineBundle/Resources/config/routing.yml"
     prefix:   /
-    defaults: { _controller: InfocineBundle:Default:index }
+    
     
 

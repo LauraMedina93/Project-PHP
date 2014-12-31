@@ -2,4 +2,4 @@ _assetic:
     resource: .
     type: assetic
 _app:
-    resource: 'C:/xampp/htdocs/Projetc-PHP/Cinemateka/finalProject/app/config/routing_dev.yml'
+    resource: 'C:/xampp/htdocs/Project-PHP/Cinemateka/finalProject/app/config/routing_dev.yml'

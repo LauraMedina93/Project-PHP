@@ -1,6 +1,6 @@
 <?php
 
-/* @WebProfiler/Profiler/toolbar.css.twig */
+/* WebProfilerBundle:Profiler:toolbar.css.twig */
 class __TwigTemplate_34b1bef45efed264639cf7e002609ec7513a160460b3ebb31848d9ca7323f900 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -469,7 +469,7 @@ table.sf-toolbar-ajax-requests {
 
     public function getTemplateName()
     {
-        return "@WebProfiler/Profiler/toolbar.css.twig";
+        return "WebProfilerBundle:Profiler:toolbar.css.twig";
     }
 
     public function isTraitable()

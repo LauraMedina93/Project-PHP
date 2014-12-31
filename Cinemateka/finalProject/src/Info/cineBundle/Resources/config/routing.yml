@@ -1,3 +1,4 @@
-cine_homepage:
-    path:     /cine/{name}
-    defaults: { _controller: cineBundle:Default:index }
+_cine:
+    resource: "@cineBundle/Controller/DefaultController.php"
+    type:     annotation
+    prefix:   /

@@ -1,6 +1,6 @@
 <?php
 
-/* @WebProfiler/Collector/ajax.html.twig */
+/* WebProfilerBundle:Collector:ajax.html.twig */
 class __TwigTemplate_4f898cf7b2046850e4051ca11e6ab1571bbf4ee633cf04057800f56eb3209cd4 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -61,7 +61,7 @@ class __TwigTemplate_4f898cf7b2046850e4051ca11e6ab1571bbf4ee633cf04057800f56eb32
 
     public function getTemplateName()
     {
-        return "@WebProfiler/Collector/ajax.html.twig";
+        return "WebProfilerBundle:Collector:ajax.html.twig";
     }
 
     public function isTraitable()

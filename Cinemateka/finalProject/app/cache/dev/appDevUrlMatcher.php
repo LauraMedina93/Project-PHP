@@ -140,9 +140,9 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        // cine_homepage
-        if (0 === strpos($pathinfo, '/cine') && preg_match('#^/cine/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'cine_homepage')), array (  '_controller' => 'InfocineBundle:Default:index',));
+        // _info_fake
+        if (0 === strpos($pathinfo, '/add') && preg_match('#^/add/(?P<name>[^/]++)/(?P<cities>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => '_info_fake')), array (  '_controller' => 'Info\\cineBundle\\Controller\\DefaultController::addProvinceAction',));
         }
 
         // _welcome
