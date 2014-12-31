@@ -140,9 +140,17 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        // _info_fake
-        if (0 === strpos($pathinfo, '/add') && preg_match('#^/add/(?P<name>[^/]++)/(?P<cities>[^/]++)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => '_info_fake')), array (  '_controller' => 'Info\\cineBundle\\Controller\\DefaultController::addProvinceAction',));
+        if (0 === strpos($pathinfo, '/add')) {
+            // _add_province
+            if (preg_match('#^/add/(?P<name>[^/]++)/(?P<cities>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => '_add_province')), array (  '_controller' => 'Info\\cineBundle\\Controller\\DefaultController::addProvinceAction',));
+            }
+
+            // _add_movie
+            if (preg_match('#^/add/(?P<name>[^/]++)/(?P<gender>[^/]++)/(?P<director>[^/]++)/(?P<year>[^/]++)/(?P<description>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => '_add_movie')), array (  '_controller' => 'Info\\cineBundle\\Controller\\DefaultController::addMovieAction',));
+            }
+
         }
 
         // _welcome

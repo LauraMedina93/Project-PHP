@@ -19,7 +19,7 @@ class __TwigTemplate_7028f454ba3571fce59088da80b2d6ef29c417cbd157ae118eb19dc6e54
         echo "
 
 
-Las ciudades es ";
+La provincia es ";
         // line 4
         echo twig_escape_filter($this->env, (isset($context["object"]) ? $context["object"] : $this->getContext($context, "object")), "html", null, true);
         echo "! y la ciudad es ";

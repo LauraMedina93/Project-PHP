@@ -77,6 +77,7 @@
   'SwiftmailerBundle:Collector:swiftmailer.html.twig' => 'C:\\xampp\\htdocs\\Project-PHP\\Cinemateka\\finalProject\\vendor\\symfony\\swiftmailer-bundle/Resources/views/Collector/swiftmailer.html.twig',
   'DoctrineBundle:Collector:db.html.twig' => 'C:\\xampp\\htdocs\\Project-PHP\\Cinemateka\\finalProject\\vendor\\doctrine\\doctrine-bundle/Resources/views/Collector/db.html.twig',
   'DoctrineBundle:Collector:explain.html.twig' => 'C:\\xampp\\htdocs\\Project-PHP\\Cinemateka\\finalProject\\vendor\\doctrine\\doctrine-bundle/Resources/views/Collector/explain.html.twig',
+  'cineBundle:Default:addMovie.html.twig' => 'C:\\xampp\\htdocs\\Project-PHP\\Cinemateka\\finalProject\\src\\Info\\cineBundle/Resources/views/Default/addMovie.html.twig',
   'cineBundle:Default:addProvince.html.twig' => 'C:\\xampp\\htdocs\\Project-PHP\\Cinemateka\\finalProject\\src\\Info\\cineBundle/Resources/views/Default/addProvince.html.twig',
   'cineBundle:Default:index.html.twig' => 'C:\\xampp\\htdocs\\Project-PHP\\Cinemateka\\finalProject\\src\\Info\\cineBundle/Resources/views/Default/index.html.twig',
   'getBundle:Default:index.html.twig' => 'C:\\xampp\\htdocs\\Project-PHP\\Cinemateka\\finalProject\\src\\Info\\getMoviesBundle/Resources/views/Default/index.html.twig',
