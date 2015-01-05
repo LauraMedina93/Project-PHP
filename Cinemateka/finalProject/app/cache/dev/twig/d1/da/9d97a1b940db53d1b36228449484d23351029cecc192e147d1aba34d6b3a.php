@@ -22,23 +22,23 @@ class __TwigTemplate_d1da9d97a1b940db53d1b36228449484d23351029cecc192e147d1aba34
 Película: ";
         // line 3
         echo twig_escape_filter($this->env, (isset($context["name"]) ? $context["name"] : $this->getContext($context, "name")), "html", null, true);
-        echo "!
+        echo "
 Género: ";
         // line 4
         echo twig_escape_filter($this->env, (isset($context["gender"]) ? $context["gender"] : $this->getContext($context, "gender")), "html", null, true);
-        echo "!
+        echo "
 Director: ";
         // line 5
         echo twig_escape_filter($this->env, (isset($context["director"]) ? $context["director"] : $this->getContext($context, "director")), "html", null, true);
-        echo "!
+        echo "
 Año: ";
         // line 6
         echo twig_escape_filter($this->env, (isset($context["year"]) ? $context["year"] : $this->getContext($context, "year")), "html", null, true);
-        echo "!
+        echo "
 Descripción: ";
         // line 7
         echo twig_escape_filter($this->env, (isset($context["description"]) ? $context["description"] : $this->getContext($context, "description")), "html", null, true);
-        echo "!
+        echo "
 
 ";
     }

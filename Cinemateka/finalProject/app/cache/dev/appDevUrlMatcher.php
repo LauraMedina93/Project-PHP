@@ -140,15 +140,39 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        if (0 === strpos($pathinfo, '/add')) {
+        if (0 === strpos($pathinfo, '/ad')) {
             // _add_province
-            if (preg_match('#^/add/(?P<name>[^/]++)/(?P<cities>[^/]++)$#s', $pathinfo, $matches)) {
+            if (0 === strpos($pathinfo, '/add') && preg_match('#^/add/(?P<name>[^/]++)/(?P<cities>[^/]++)$#s', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, array('_route' => '_add_province')), array (  '_controller' => 'Info\\cineBundle\\Controller\\DefaultController::addProvinceAction',));
             }
 
-            // _add_movie
-            if (preg_match('#^/add/(?P<name>[^/]++)/(?P<gender>[^/]++)/(?P<director>[^/]++)/(?P<year>[^/]++)/(?P<description>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => '_add_movie')), array (  '_controller' => 'Info\\cineBundle\\Controller\\DefaultController::addMovieAction',));
+            if (0 === strpos($pathinfo, '/admin')) {
+                // _add_movie
+                if (0 === strpos($pathinfo, '/admin/add') && preg_match('#^/admin/add/(?P<name>[^/]++)/(?P<gender>[^/]++)/(?P<director>[^/]++)/(?P<year>[^/]++)/(?P<description>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => '_add_movie')), array (  '_controller' => 'Info\\cineBundle\\Controller\\DefaultController::addMovieAction',));
+                }
+
+                if (0 === strpos($pathinfo, '/admin/log')) {
+                    if (0 === strpos($pathinfo, '/admin/login')) {
+                        // login
+                        if ($pathinfo === '/admin/login') {
+                            return array (  '_controller' => 'Info\\cineBundle\\Controller\\SecurityController::loginAction',  '_route' => 'login',);
+                        }
+
+                        // login_check
+                        if ($pathinfo === '/admin/login_check') {
+                            return array (  '_controller' => 'Info\\cineBundle\\Controller\\DefaultController::addMovieAction',  '_route' => 'login_check',);
+                        }
+
+                    }
+
+                    // logout
+                    if ($pathinfo === '/admin/logout') {
+                        return array('_route' => 'logout');
+                    }
+
+                }
+
             }
 
         }

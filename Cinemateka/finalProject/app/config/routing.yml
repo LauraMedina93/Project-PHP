@@ -10,5 +10,13 @@ cine:
     resource: "@cineBundle/Resources/config/routing.yml"
     prefix:   /
     
+login:
+    pattern:   admin/login
+    defaults:  { _controller: cineBundle:Security:login }
+login_check:
+    path:   admin/login_check
+    defaults: {_controller: cineBundle:Default:addMovie }
     
+logout:
+     path:   admin/logout
 

@@ -80,6 +80,7 @@
   'cineBundle:Default:addMovie.html.twig' => 'C:\\xampp\\htdocs\\Project-PHP\\Cinemateka\\finalProject\\src\\Info\\cineBundle/Resources/views/Default/addMovie.html.twig',
   'cineBundle:Default:addProvince.html.twig' => 'C:\\xampp\\htdocs\\Project-PHP\\Cinemateka\\finalProject\\src\\Info\\cineBundle/Resources/views/Default/addProvince.html.twig',
   'cineBundle:Default:index.html.twig' => 'C:\\xampp\\htdocs\\Project-PHP\\Cinemateka\\finalProject\\src\\Info\\cineBundle/Resources/views/Default/index.html.twig',
+  'cineBundle:Security:login.html.twig' => 'C:\\xampp\\htdocs\\Project-PHP\\Cinemateka\\finalProject\\src\\Info\\cineBundle/Resources/views/Security/login.html.twig',
   'getBundle:Default:index.html.twig' => 'C:\\xampp\\htdocs\\Project-PHP\\Cinemateka\\finalProject\\src\\Info\\getMoviesBundle/Resources/views/Default/index.html.twig',
   'postBundle:Default:index.html.twig' => 'C:\\xampp\\htdocs\\Project-PHP\\Cinemateka\\finalProject\\src\\Info\\postMoviesBundle/Resources/views/Default/index.html.twig',
   'DebugBundle:Profiler:dump.html.twig' => 'C:\\xampp\\htdocs\\Project-PHP\\Cinemateka\\finalProject\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\DebugBundle/Resources/views/Profiler/dump.html.twig',

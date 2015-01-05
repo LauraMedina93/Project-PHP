@@ -9,7 +9,9 @@ use Info\cineBundle\Entity\Movies;
 // these import the "@Route" and "@Template" annotations
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-
+//these import the "@Security" annotations
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Info\cineBundle\Controller\SecurityController;
 
 class DefaultController extends Controller
 {       
@@ -32,8 +34,9 @@ class DefaultController extends Controller
     }
     
     /**
-     * @Route("/add/{name}/{gender}/{director}/{year}/{description}", 
+     * @Route("/admin/add/{name}/{gender}/{director}/{year}/{description}", 
      * name="_add_movie")
+     * @Security ("is_granted('ROLE_ADMIN')")
      * @Template()
      */
     
