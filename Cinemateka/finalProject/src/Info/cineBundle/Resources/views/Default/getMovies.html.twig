@@ -1,0 +1,30 @@
+{% extends "cineBundle::layout.html.twig" %}
+
+{% block body %}
+    {% block content %}
+        <h1>Movies</h1>
+        <br>
+        <table border="3">
+            <tr>
+                <th>Movie ID</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Year</th>
+                <th>Director</th>
+                <th>Description</th>
+            </tr>
+            {% for movie in movies %}
+                <tr>
+                    <td>{{ movie.id }}</td>
+                    <td>{{ movie.name }}</td>
+                    <td>{{ movie.gender}}</td>
+                    <td>{{ movie.year }}</td>
+                    <td>{{ movie.director }}</td>
+                    <td>{{ movie.description }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+
+    {% endblock %}
+{% endblock %}
+

@@ -1,8 +1,22 @@
-{{'Película agregada con éxito'}}
+{% extends "cineBundle::layout.html.twig" %}
 
-Película: {{name}}
-Género: {{gender}}
-Director: {{director}}
-Año: {{year}}
-Descripción: {{description}}
 
+  {% block body %}
+
+    {% block content %}
+        <form action="{{ path('_add_movie') }}" method="POST" id="contact_form">
+            {{ form_errors(form) }}
+
+            {{ form_row(form.Name) }}
+            {{ form_row(form.Gender) }}
+            {{ form_row(form.Year) }}
+            {{ form_row(form.Director) }}
+            {{ form_row(form.Description) }}
+
+            {{ form_rest(form) }}
+            <input type="submit" value="Load" class="symfony-button-grey" />
+            
+        </form>
+           
+    {% endblock %}
+    {% endblock%}

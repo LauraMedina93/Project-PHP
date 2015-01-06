@@ -7,40 +7,78 @@ class __TwigTemplate_d1da9d97a1b940db53d1b36228449484d23351029cecc192e147d1aba34
     {
         parent::__construct($env);
 
-        $this->parent = false;
+        $this->parent = $this->env->loadTemplate("cineBundle::layout.html.twig");
 
         $this->blocks = array(
+            'body' => array($this, 'block_body'),
+            'content' => array($this, 'block_content'),
         );
+    }
+
+    protected function doGetParent(array $context)
+    {
+        return "cineBundle::layout.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        // line 1
-        echo "Película agregada con éxito";
-        echo "
+        $this->parent->display($context, array_merge($this->blocks, $blocks));
+    }
 
-Película: ";
-        // line 3
-        echo twig_escape_filter($this->env, (isset($context["name"]) ? $context["name"] : $this->getContext($context, "name")), "html", null, true);
-        echo "
-Género: ";
-        // line 4
-        echo twig_escape_filter($this->env, (isset($context["gender"]) ? $context["gender"] : $this->getContext($context, "gender")), "html", null, true);
-        echo "
-Director: ";
+    // line 4
+    public function block_body($context, array $blocks = array())
+    {
         // line 5
-        echo twig_escape_filter($this->env, (isset($context["director"]) ? $context["director"] : $this->getContext($context, "director")), "html", null, true);
         echo "
-Año: ";
+    ";
         // line 6
-        echo twig_escape_filter($this->env, (isset($context["year"]) ? $context["year"] : $this->getContext($context, "year")), "html", null, true);
-        echo "
-Descripción: ";
+        $this->displayBlock('content', $context, $blocks);
+        // line 22
+        echo "    ";
+    }
+
+    // line 6
+    public function block_content($context, array $blocks = array())
+    {
         // line 7
-        echo twig_escape_filter($this->env, (isset($context["description"]) ? $context["description"] : $this->getContext($context, "description")), "html", null, true);
+        echo "        <form action=\"";
+        echo $this->env->getExtension('routing')->getPath("_add_movie");
+        echo "\" method=\"POST\" id=\"contact_form\">
+            ";
+        // line 8
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'errors');
         echo "
 
-";
+            ";
+        // line 10
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "Name", array()), 'row');
+        echo "
+            ";
+        // line 11
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "Gender", array()), 'row');
+        echo "
+            ";
+        // line 12
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "Year", array()), 'row');
+        echo "
+            ";
+        // line 13
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "Director", array()), 'row');
+        echo "
+            ";
+        // line 14
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "Description", array()), 'row');
+        echo "
+
+            ";
+        // line 16
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'rest');
+        echo "
+            <input type=\"submit\" value=\"Load\" class=\"symfony-button-grey\" />
+            
+        </form>
+           
+    ";
     }
 
     public function getTemplateName()
@@ -55,6 +93,6 @@ Descripción: ";
 
     public function getDebugInfo()
     {
-        return array (  40 => 7,  36 => 6,  32 => 5,  28 => 4,  24 => 3,  19 => 1,);
+        return array (  75 => 16,  70 => 14,  66 => 13,  62 => 12,  58 => 11,  54 => 10,  49 => 8,  44 => 7,  41 => 6,  37 => 22,  35 => 6,  32 => 5,  29 => 4,);
     }
 }
