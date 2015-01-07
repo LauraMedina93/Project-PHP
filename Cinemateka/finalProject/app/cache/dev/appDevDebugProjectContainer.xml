@@ -1866,7 +1866,16 @@
                 <argument>^/admin/login$</argument>
               </service>
             </argument>
-            <argument key="security.firewall.map.context.secured_area">null</argument>
+            <argument key="security.firewall.map.context.dev" type="service">
+              <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+                <argument>^/(_(profiler|wdt)|css|images|js)/</argument>
+              </service>
+            </argument>
+            <argument key="security.firewall.map.context.secured_area" type="service">
+              <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+                <argument>^/admin</argument>
+              </service>
+            </argument>
           </argument>
         </service>
       </argument>
@@ -1910,6 +1919,10 @@
       </call>
     </service>
     <service id="security.firewall.map.context.login" class="Symfony\Bundle\SecurityBundle\Security\FirewallContext">
+      <argument type="collection"/>
+      <argument>null</argument>
+    </service>
+    <service id="security.firewall.map.context.dev" class="Symfony\Bundle\SecurityBundle\Security\FirewallContext">
       <argument type="collection"/>
       <argument>null</argument>
     </service>

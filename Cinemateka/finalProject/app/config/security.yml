@@ -17,8 +17,14 @@ security:
         login:
             pattern:    ^/admin/login$
             security: false
-            
+        dev:
+            pattern:  ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        
         secured_area:
+            pattern: ^/admin
+            http_basic:
+                realm: "Secured Area"
             form_login:
                 check_path: /admin/login_check  
                 login_path: /admin/login     
@@ -26,12 +32,12 @@ security:
             logout:
                 path:   /admin/logout
                 target: /admin/
-    
-            http_basic:
-                realm: "Secured Area"
+                
+            
 
     access_control:
         - { path: ^/admin, roles: ROLE_ADMIN }
+        
 
     
 

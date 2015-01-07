@@ -34,7 +34,7 @@ class __TwigTemplate_2b79efbf053a151d15cd0b45a0f6518407924ac27f381eeefea3923e9eb
     {
         // line 4
         echo "    <link rel=\"icon\" sizes=\"16x16\" href=\"";
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("favicon.ico"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("Cinemateka.ico"), "html", null, true);
         echo "\" />
     <link rel=\"stylesheet\" href=\"";
         // line 5
