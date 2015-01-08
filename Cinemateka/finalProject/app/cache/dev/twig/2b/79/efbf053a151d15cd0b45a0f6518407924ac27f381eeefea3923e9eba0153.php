@@ -80,17 +80,17 @@ class __TwigTemplate_2b79efbf053a151d15cd0b45a0f6518407924ac27f381eeefea3923e9eb
         ";
         // line 28
         $this->displayBlock('content', $context, $blocks);
-        // line 29
+        // line 31
         echo "    </div>
 
     ";
-        // line 31
+        // line 33
         if (array_key_exists("code", $context)) {
-            // line 32
+            // line 34
             echo "        <h2>Code behind this page</h2>
         <div class=\"block\">
             <div class=\"symfony-content\">";
-            // line 34
+            // line 36
             echo (isset($context["code"]) ? $context["code"] : $this->getContext($context, "code"));
             echo "</div>
         </div>
@@ -126,6 +126,9 @@ class __TwigTemplate_2b79efbf053a151d15cd0b45a0f6518407924ac27f381eeefea3923e9eb
     // line 28
     public function block_content($context, array $blocks = array())
     {
+        // line 29
+        echo "            <img src=\"../images/Cinemateka.png\" alt=\"\"/>
+        ";
     }
 
     public function getTemplateName()
@@ -140,6 +143,6 @@ class __TwigTemplate_2b79efbf053a151d15cd0b45a0f6518407924ac27f381eeefea3923e9eb
 
     public function getDebugInfo()
     {
-        return array (  127 => 28,  120 => 20,  117 => 19,  110 => 22,  108 => 19,  105 => 18,  102 => 17,  94 => 34,  90 => 32,  88 => 31,  84 => 29,  82 => 28,  78 => 26,  76 => 17,  73 => 16,  64 => 13,  61 => 12,  56 => 11,  53 => 10,  47 => 8,  41 => 5,  36 => 4,  33 => 3,);
+        return array (  130 => 29,  127 => 28,  120 => 20,  117 => 19,  110 => 22,  108 => 19,  105 => 18,  102 => 17,  94 => 36,  90 => 34,  88 => 33,  84 => 31,  82 => 28,  78 => 26,  76 => 17,  73 => 16,  64 => 13,  61 => 12,  56 => 11,  53 => 10,  47 => 8,  41 => 5,  36 => 4,  33 => 3,);
     }
 }

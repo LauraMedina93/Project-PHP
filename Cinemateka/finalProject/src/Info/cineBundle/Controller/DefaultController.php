@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Info\cineBundle\Entity\Provinces;
 use Info\cineBundle\Entity\Movies;
+use Info\cineBundle\Entity\Cines;
 // these import the "@Route" and "@Template" annotations
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
@@ -16,6 +17,16 @@ use Info\cineBundle\Controller\SecurityController;
 
 class DefaultController extends Controller {
 
+    /**
+     * @Route("/home", name="_home")
+     * @Template()
+     */
+    public function indexAction()
+    {
+        return $this->render('cineBundle:Default:index.html.twig');
+    }
+      
+       
     /**
      * @Route("/add/{name}/{cities}", name="_add_province")
      * @Template()
@@ -74,5 +85,17 @@ class DefaultController extends Controller {
         return $this->render('cineBundle:Default:getMovies.html.twig', array(
             'movies' => $movies));
     }
-
+    
+    /**
+     * @Route("/getCines", name="_get_cines")
+     * @Template()
+     */
+    
+    public function getCinesAction(){
+        $em = $this->getDoctrine()->getManager();
+        $cines = $em->getRepository('cineBundle:Cines')->findAll();
+        return $this->render('cineBundle:Default:getCines.html.twig', array(
+            'cines' => $cines));
+    }
+    
 }

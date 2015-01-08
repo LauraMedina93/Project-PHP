@@ -127,15 +127,23 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        if (0 === strpos($pathinfo, '/hello')) {
-            // post_homepage
-            if (preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'post_homepage')), array (  '_controller' => 'Info\\postMoviesBundle\\Controller\\DefaultController::indexAction',));
+        if (0 === strpos($pathinfo, '/h')) {
+            if (0 === strpos($pathinfo, '/hello')) {
+                // post_homepage
+                if (preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'post_homepage')), array (  '_controller' => 'Info\\postMoviesBundle\\Controller\\DefaultController::indexAction',));
+                }
+
+                // get_homepage
+                if (preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'get_homepage')), array (  '_controller' => 'Info\\getMoviesBundle\\Controller\\DefaultController::indexAction',));
+                }
+
             }
 
-            // get_homepage
-            if (preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'get_homepage')), array (  '_controller' => 'Info\\getMoviesBundle\\Controller\\DefaultController::indexAction',));
+            // _home
+            if ($pathinfo === '/home') {
+                return array (  '_controller' => 'Info\\cineBundle\\Controller\\DefaultController::indexAction',  '_route' => '_home',);
             }
 
         }
@@ -153,9 +161,17 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        // _get_movies
-        if ($pathinfo === '/getMovies') {
-            return array (  '_controller' => 'Info\\cineBundle\\Controller\\DefaultController::getMoviesAction',  '_route' => '_get_movies',);
+        if (0 === strpos($pathinfo, '/get')) {
+            // _get_movies
+            if ($pathinfo === '/getMovies') {
+                return array (  '_controller' => 'Info\\cineBundle\\Controller\\DefaultController::getMoviesAction',  '_route' => '_get_movies',);
+            }
+
+            // _get_cines
+            if ($pathinfo === '/getCines') {
+                return array (  '_controller' => 'Info\\cineBundle\\Controller\\DefaultController::getCinesAction',  '_route' => '_get_cines',);
+            }
+
         }
 
         if (0 === strpos($pathinfo, '/admin/log')) {
@@ -185,7 +201,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return $this->redirect($pathinfo.'/', '_welcome');
             }
 
-            return array (  '_controller' => 'Acme\\DemoBundle\\Controller\\WelcomeController::indexAction',  '_route' => '_welcome',);
+            return array (  '_controller' => 'AcmeDemoBundle:Welcome:index',  '_route' => '_welcome',);
         }
 
         if (0 === strpos($pathinfo, '/demo')) {

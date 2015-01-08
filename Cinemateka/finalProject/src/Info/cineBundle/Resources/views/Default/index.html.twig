@@ -1,1 +1,26 @@
-Hello {{ name }}!
+{% extends 'cineBundle::layout.html.twig' %}
+
+{% block title %}Cinemateka{% endblock %}
+
+{% block content_header '' %}
+
+{% block content %}
+    
+
+    <h1 class="title">Welcome to Cinemateka!</h1>
+
+    
+    
+    <div class = "logo" >
+           
+        </div>
+        <div id = "intro" class = "intro" >
+            <div class = "slogan" >
+                <select>
+                    <option value = "" > Selecciona tu ciudad: </option>
+                    <option value = "corrientes" > Corrientes </option>
+                    <option value = "resistencia" > Resistencia </option>
+                </select>
+            </div>
+        </div>
+{% endblock %}

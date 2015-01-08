@@ -1,0 +1,27 @@
+{% extends "cineBundle::layout.html.twig" %}
+
+{% block body %}
+    {% block content %}
+        <h1>Cines</h1>
+        <br>
+        <table border="3">
+            <tr>
+                <th>Cine ID</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Carteleras</th>
+                
+            </tr>
+            {% for cine in cines %}
+                <tr>
+                    <td>{{ cine.id }}</td>
+                    <td>{{ cine.name }}</td>
+                    <td>{{ cine.address}}</td>
+                    <td>{{ cine.carteleras }}</td>
+
+                </tr>
+            {% endfor %}
+        </table>
+
+    {% endblock %}
+{% endblock %}
